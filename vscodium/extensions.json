@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "alefragnani.project-manager",
+        "antfu.iconify",
+        "bmewburn.vscode-intelephense-client",
+        "bradlc.vscode-tailwindcss",
+        "BriteSnow.vscode-toggle-quotes",
+        "CoachRichbart.better-jest",
+        "dbaeumer.vscode-eslint",
+        "iocave.customize-ui",
+        "iocave.monkey-patch",
+        "jeff-hykin.polacode-2019",
+        "johnsoncodehk.volar",
+        "lokalise.i18n-ally",
+        "MehediDracula.php-namespace-resolver",
+        "pajdziu.trailingwhitespacehighlighter",
+        "patbenatar.advanced-new-file",
+        "rebornix.toggle",
+        "streetsidesoftware.code-spell-checker",
+        "vscode-icons-team.vscode-icons"
+    ]
+}

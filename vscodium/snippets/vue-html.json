@@ -1,0 +1,18 @@
+{
+    "Lorem Ipsum": {
+        "prefix": "lorem",
+        "body": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque tempus magna, eget sodales mauris. Vestibulum gravida nisl nec eleifend tincidunt. Donec cursus magna ac arcu suscipit viverra."
+        ],
+        "description": "Write lorem ipsum text"
+    },
+    "Long Lorem Ipsum": {
+        "prefix": "llorem",
+        "body": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque tempus magna, eget sodales mauris. Vestibulum gravida nisl nec eleifend tincidunt. Donec cursus magna ac arcu suscipit viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consectetur rutrum nulla, eget pulvinar ante posuere nec. Morbi vel euismod ligula, quis vestibulum nunc. Nulla iaculis ac turpis eu tincidunt. Etiam eget massa tincidunt, pellentesque justo molestie, tincidunt justo. Vivamus maximus auctor velit, a cursus eros ultricies ac. Morbi nec placerat neque, a bibendum eros. Maecenas scelerisque suscipit faucibus. Vivamus egestas mauris non mi tincidunt condimentum. Quisque dictum velit sed ante elementum, efficitur sollicitudin lectus mollis. Duis a feugiat est, a porttitor sapien. Praesent volutpat urna sed orci porta dictum.",
+            "Nulla in tellus nec dui viverra scelerisque. Maecenas luctus turpis vel metus gravida, nec porta est ullamcorper. Sed et elit finibus, posuere neque at, congue lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Curabitur volutpat libero velit, ut ultrices lacus condimentum eget. Sed ultrices, ligula quis sodales tristique, diam urna commodo nulla, id interdum mauris elit eget velit. Phasellus laoreet augue id sem vehicula convallis. Vestibulum faucibus sagittis lorem in finibus. Curabitur nec tellus mi.",
+            "Maecenas at ligula non quam tristique tempus. Vestibulum vel neque fermentum, sodales metus ut, pulvinar magna. Integer vitae semper lacus. Vestibulum lacus ex, auctor a rhoncus et, vulputate pharetra quam. Etiam at purus tristique, gravida ex ac, dignissim tellus. Proin a molestie magna, at hendrerit lacus. Vestibulum vitae suscipit tortor. Mauris dictum purus lacus, ut vestibulum nulla viverra quis. Nulla facilisi. Morbi ultricies nibh a tincidunt placerat. Morbi fermentum ut velit sed ultricies."
+        ],
+        "description": "Write long lorem ipsum text"
+    }
+}

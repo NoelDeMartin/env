@@ -1,0 +1,166 @@
+{
+    "Component Property": {
+        "prefix": "cprop",
+        "body": [
+            "$1: {",
+            "    type: ${2:String},",
+            "    default: ${3:null},",
+            "},$0"
+        ],
+        "description": "Create a component property definition"
+    },
+    "Component Required Property": {
+        "prefix": "crprop",
+        "body": [
+            "$1: {",
+            "    type: ${2:String},",
+            "    required: true,",
+            "},$0"
+        ],
+        "description": "Create a component required property definition"
+    },
+    "Singleton class": {
+        "prefix": "singleton",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} {",
+            "",
+            "    $0",
+            "",
+            "}",
+            "",
+            "export default new ${1:$TM_FILENAME_BASE}();",
+            ""
+        ],
+        "description": "Create a singleton class"
+    },
+    "Public method": {
+        "prefix": "met",
+        "body": [
+            "public $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a public method"
+    },
+    "Protected method": {
+        "prefix": "pmet",
+        "body": [
+            "protected $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a protected method"
+    },
+    "Private method": {
+        "prefix": "prmet",
+        "body": [
+            "private $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a private method"
+    },
+    "Getter method": {
+        "prefix": "gmet",
+        "body": [
+            "public get $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a getter method"
+    },
+    "Constructor method": {
+        "prefix": "cmet",
+        "body": [
+            "constructor($1) {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a constructor method"
+    },
+    "Function": {
+        "prefix": "fun",
+        "body": [
+            "function $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a function"
+    },
+    "Async function": {
+        "prefix": "afun",
+        "body": [
+            "async function $1($2): Promise<$3> {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create an asynchronous function"
+    },
+    "Jest Test Suite": {
+        "prefix": "testsuite",
+        "body": [
+            "describe('${1:$TM_FILENAME_BASE}', () => {",
+            "",
+            "    $0",
+            "",
+            "});"
+        ],
+        "description": "Create a test suite"
+    },
+    "Jest Test": {
+        "prefix": "test",
+        "body": [
+            "it('$1', () => {",
+            "    // Arrange",
+            "    $0",
+            "",
+            "    // Act",
+            "",
+            "    // Assert",
+            "})"
+        ],
+        "description": "Create a new Jest test"
+    },
+    "Asynchronous Jest Test": {
+        "prefix": "atest",
+        "body": [
+            "it('$1', async () => {",
+            "    // Arrange",
+            "    $0",
+            "",
+            "    // Act",
+            "",
+            "    // Assert",
+            "})"
+        ],
+        "description": "Create a new asynchronous Jest test"
+    },
+    "Simple Jest Test": {
+        "prefix": "stest",
+        "body": [
+            "it('$1', () => {",
+            "    $0",
+            "})"
+        ],
+        "description": "Create a new simple Jest test"
+    },
+    "Console log": {
+        "prefix": "log",
+        "body": [
+            "console.log($1);"
+        ],
+        "description": "Console log statement"
+    },
+    "Arrange, Act, Assert": {
+        "prefix": "aaa",
+        "body": [
+            "// Arrange",
+            "$0",
+            "",
+            "// Act",
+            "",
+            "// Assert"
+        ],
+        "description": "Create an Arrange, Act, Assert block of comments"
+    }
+}

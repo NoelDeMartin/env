@@ -1,0 +1,178 @@
+{
+
+    /**
+     * Better Defaults
+     **/
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "volar.completion.autoImportComponent": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "inherit",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "search.searchOnType": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "eslint.onIgnoredFiles": "warn",
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.view.explorer"
+    ],
+
+    /**
+     * Silence The Noise
+     */
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false,
+    "workbench.editor.showTabs": false,
+    "editor.lineNumbers": "off",
+    "scm.diffDecorations": "none",
+    "editor.matchBrackets": "never",
+    "workbench.tips.enabled": false,
+    "editor.colorDecorators": false,
+    "git.decorations.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": false,
+    "editor.selectionHighlight": true,
+    "editor.guides.indentation": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": true,
+    "editor.accessibilitySupport": "off",
+    "problems.decorations.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.gotoLocation.multipleReferences": "gotoAndPeek",
+    "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+    "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.gotoLocation.multipleImplementations": "gotoAndPeek",
+    "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "native",
+    "customizeUI.titleBar": "inline",
+    "customizeUI.stylesheet": {
+        // Hide buttons in editor
+        ".part.editor .title .actions-container .action-item a": "display: none !important;",
+        // Hide buttons in bottom panel
+        ".panel.bottom .title .title-actions .actions-container .action-item a": "display: none !important;",
+        ".panel.bottom .title .title-actions .actions-container .action-item": "margin-right: 0px !important;",
+        ".panel.bottom .title .title-actions .actions-container .action-item select": "height: 34px !important;",
+        ".panel.bottom .title .title-actions .actions-container .action-item.select-container": "max-width: 400px !important;",
+        ".panel.bottom .title": "padding-right: 0px !important;",
+        // Hide scrollbar and show minimap on hover
+        ".editor .minimap": "opacity: 0;",
+        ".editor .minimap:hover": "opacity: 1;",
+        ".editor .minimap .minimap-shadow-visible": "display: none;",
+        ".editor .scrollbar .slider": "display: none;",
+        // Hide title shadow
+        ".monaco-editor .scroll-decoration": "box-shadow: none !important;",
+        // Hide title breadcrumbs
+        ".monaco-breadcrumbs": "display: none !important;",
+        // Fix bottom panel spacing
+        ".panel.bottom .content .terminal-tab .terminal": "top: 12px;",
+        // Change cursor color.
+        ".monaco-editor .cursor": "background: linear-gradient(to bottom, #7f00ff, #e100ff) !important; color: #292D3E !important;",
+    },
+
+    /**
+     * Typography & Themes
+     **/
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontFamily": "MonoLisa",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 35,
+    "editor.suggestFontSize": 15,
+    "editor.suggestLineHeight": 28,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.lineHeight": 1.5,
+
+    /**
+     * Find
+     **/
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+        "**/public/{[^i],?[^n]}*": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/_ide_helper.php": true,
+        "**/composer.lock": true,
+        "**/package-lock.json": true,
+        "storage": true,
+        ".phpunit.result.cache": true
+    },
+
+    /**
+     * I18n
+     */
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.localesPaths": ["src/lang"],
+    "i18n-ally.sortKeys": true,
+
+    /**
+     * Language Specifics
+     **/
+    "php.suggest.basic": false,
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.suggest.autoImports": true,
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "emmet.includeLanguages": {
+        "blade": "html",
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "togglequotes.chars": [
+        "\"",
+        "'",
+        "`"
+    ],
+
+    /**
+     * Dictionary
+     **/
+    "cSpell.userWords": [
+        "Bootup",
+        "Chainable",
+        "Inrupt",
+        "JSONLD",
+        "Laravel",
+        "Mixins",
+        "SPARQL",
+        "Stringable",
+        "TMDB",
+        "Timeoutable",
+        "Uncapitalize",
+        "autoload",
+        "chainer",
+        "globbing",
+        "imdb",
+        "noeldemartin",
+        "oidc",
+        "opengraph",
+        "rdfs",
+        "snackbars",
+        "soukai",
+        "tailwindcss",
+        "themoviedb",
+        "tviso",
+        "umai",
+        "vite",
+        "vitejs",
+        "vuex"
+    ],
+
+    /**
+     * Secrets
+     **/
+    "intelephense.licenceKey": "[intelephense.licenceKey]"
+
+}

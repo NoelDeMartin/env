@@ -1,0 +1,38 @@
+{
+    "Constructor": {
+        "prefix": "cmet",
+        "body": [
+            "public function __construct($1) {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a constructor method"
+    },
+    "Public method": {
+        "prefix": "met",
+        "body": [
+            "public function $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a public method"
+    },
+    "Protected method": {
+        "prefix": "pmet",
+        "body": [
+            "protected function $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a protected method"
+    },
+    "Private method": {
+        "prefix": "prmet",
+        "body": [
+            "private function $1($2): $3 {",
+            "    $0",
+            "}"
+        ],
+        "description": "Create a private method"
+    }
+}

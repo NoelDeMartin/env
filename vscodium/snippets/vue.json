@@ -1,0 +1,28 @@
+{
+    "Component": {
+        "prefix": "component",
+        "body": [
+            "<template>",
+            "    $1",
+            "</template>",
+            "",
+            "<script setup lang=\"ts\"></script>",
+            ""
+        ],
+        "description": "Create a new component"
+    },
+    "Modal Component": {
+        "prefix": "mcomponent",
+        "body": [
+            "<template>",
+            "    <AppModal>",
+            "        $0",
+            "    </AppModal>",
+            "</template>",
+            "",
+            "<script setup lang=\"ts\"></script>",
+            ""
+        ],
+        "description": "Create a new modal component"
+    }
+}
