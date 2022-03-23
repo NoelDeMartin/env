@@ -122,6 +122,7 @@
      * Language Specifics
      **/
     "php.suggest.basic": false,
+    "php.validate.enable": false,
     "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.autoImports": true,
     "typescript.preferences.importModuleSpecifier": "non-relative",
