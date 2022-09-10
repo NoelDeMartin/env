@@ -3,6 +3,7 @@
     /**
      * Better Defaults
      **/
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "volar.completion.autoImportComponent": false,
     "editor.copyWithSyntaxHighlighting": false,
