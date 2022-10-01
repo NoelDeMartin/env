@@ -4,10 +4,20 @@ alias ...="cd ../.."
 alias ll="ls -la"
 
 function go() {
-    # TODO implement autocompletion
-
     cd "/home/`whoami`/workspace/$1"
 }
+
+function goAutocomplete() {
+    local file
+
+    for file in /home/`whoami`/workspace/"$2"*; do
+        [[ -d $file ]] || continue
+
+        COMPREPLY+=( $(basename "$file") )
+    done
+}
+
+complete -F goAutocomplete go
 
 # Permissions
 alias own="sudo chown `whoami`:`whoami` . -R"
