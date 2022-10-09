@@ -22,7 +22,7 @@
     },
     {
         "key": "ctrl+k ctrl+x",
-        "command": "workbench.extensions.action.showInstalledExtensions"
+        "command": "workbench.view.extensions"
     },
     {
         "key": "ctrl+b",
