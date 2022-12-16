@@ -29,6 +29,7 @@
     /**
      * Silence The Noise
      */
+    "update.mode": "none",
     "workbench.activityBar.visible": false,
     "workbench.sideBar.location": "right",
     "workbench.statusBar.visible": false,
