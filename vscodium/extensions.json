@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "alefragnani.project-manager",
         "antfu.iconify",
         "bmewburn.vscode-intelephense-client",
         "bradlc.vscode-tailwindcss",
@@ -10,13 +9,13 @@
         "iocave.customize-ui",
         "iocave.monkey-patch",
         "jeff-hykin.polacode-2019",
-        "johnsoncodehk.volar",
         "lokalise.i18n-ally",
         "MehediDracula.php-namespace-resolver",
         "pajdziu.trailingwhitespacehighlighter",
-        "patbenatar.advanced-new-file",
         "rebornix.toggle",
+        "simple-project-switcher",
         "streetsidesoftware.code-spell-checker",
-        "vscode-icons-team.vscode-icons"
+        "vscode-icons-team.vscode-icons",
+        "Vue.volar",
     ]
 }

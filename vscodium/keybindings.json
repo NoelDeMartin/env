@@ -1,4 +1,5 @@
 [
+
     /**
      * Panels
      */
@@ -76,11 +77,6 @@
     {
         "key": "ctrl+shift+n",
         "command": "-workbench.action.newWindow"
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "extension.advancedNewFile",
-        "when": "!filesExplorerFocus"
     },
 
     /**
@@ -387,6 +383,6 @@
         "key": "f11",
         "command": "-extension.node-debug.startWithStopOnEntry",
         "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && debugConfigurationType == 'pwa-node'"
-    }
+    },
 
 ]
