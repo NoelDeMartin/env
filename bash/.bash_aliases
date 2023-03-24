@@ -62,3 +62,11 @@ alias nr="npm run"
 alias mu="metal up --only"
 alias md="metal down"
 alias mr="metal restart"
+
+# Laravel
+alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
+alias su="sail up -d"
+alias sd="sail down"
+alias art="sail artisan"
+alias at="art test"
+alias composer="docker run --rm -u '$(id -u):$(id -g)' -v '$(pwd):/var/www/html' -w /var/www/html laravelsail/php82-composer:latest composer"
