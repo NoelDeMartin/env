@@ -1,7 +1,13 @@
 # VSCode opens terminals in the project root, so this will make sure that
 # you're using the correct version of npm and node
-if [ -f .nvmrc ]; then
-  nvm install &> /dev/null
+currentdir=`pwd`
+
+while [ $currentdir != "/" ] && [ ! -f "$currentdir/.nvmrc" ]; do
+    currentdir=`dirname $currentdir`
+done
+
+if [ $currentdir != "/" ]; then
+    nvm install &> /dev/null
 fi
 
 # Change default prompt
