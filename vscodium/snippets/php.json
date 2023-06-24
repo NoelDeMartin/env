@@ -34,5 +34,12 @@
             "}"
         ],
         "description": "Create a private method"
+    },
+    "Die Dump": {
+        "prefix": "dd",
+        "body": [
+            "var_dump($0);die();"
+        ],
+        "description": "Poor man's substitute for Laravel's dd when it's missing"
     }
 }

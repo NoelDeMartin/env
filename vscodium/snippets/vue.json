@@ -3,11 +3,9 @@
         "prefix": "component",
         "body": [
             "<template>",
-            "    $1",
+            "    ${1:<div>$2</div>}",
             "</template>",
-            "",
-            "<script setup lang=\"ts\"></script>",
-            ""
+            "$3",
         ],
         "description": "Create a new component"
     },
@@ -19,10 +17,17 @@
             "        $0",
             "    </AppModal>",
             "</template>",
-            "",
-            "<script setup lang=\"ts\"></script>",
-            ""
+            "$3"
         ],
         "description": "Create a new modal component"
-    }
+    },
+    "Script block": {
+        "prefix": "scriptts",
+        "body": [
+            "<script setup lang=\"ts\">",
+            "$0",
+            "</script>"
+        ],
+        "description": "Create a setup script block using TypeScript"
+    },
 }

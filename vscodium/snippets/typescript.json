@@ -1,38 +1,6 @@
 {
-    "Component Property": {
-        "prefix": "cprop",
-        "body": [
-            "$1: {",
-            "    type: ${2:String},",
-            "    default: ${3:null},",
-            "},$0"
-        ],
-        "description": "Create a component property definition"
-    },
-    "Component Required Property": {
-        "prefix": "crprop",
-        "body": [
-            "$1: {",
-            "    type: ${2:String},",
-            "    required: true,",
-            "},$0"
-        ],
-        "description": "Create a component required property definition"
-    },
-    "Singleton class": {
-        "prefix": "singleton",
-        "body": [
-            "class ${1:$TM_FILENAME_BASE} {",
-            "",
-            "    $0",
-            "",
-            "}",
-            "",
-            "export default new ${1:$TM_FILENAME_BASE}();",
-            ""
-        ],
-        "description": "Create a singleton class"
-    },
+
+    // General purpose
     "Public method": {
         "prefix": "met",
         "body": [
@@ -96,18 +64,30 @@
         ],
         "description": "Create an asynchronous function"
     },
-    "Jest Test Suite": {
+    "Console log": {
+        "prefix": "log",
+        "body": [
+            "console.log($1);"
+        ],
+        "description": "Console log statement"
+    },
+
+    // Testing
+    "Test suite": {
         "prefix": "testsuite",
         "body": [
+            "import { it, describe, expect } from 'vitest';",
+            "",
             "describe('${1:$TM_FILENAME_BASE}', () => {",
             "",
             "    $0",
             "",
-            "});"
+            "});",
+            ""
         ],
-        "description": "Create a test suite"
-    },
-    "Jest Test": {
+        "description": "Create a new test suite using Vitest"
+      },
+      "Test": {
         "prefix": "test",
         "body": [
             "it('$1', () => {",
@@ -117,11 +97,11 @@
             "    // Act",
             "",
             "    // Assert",
-            "})"
+            "});"
         ],
-        "description": "Create a new Jest test"
+        "description": "Create a new test case using Vitest"
     },
-    "Asynchronous Jest Test": {
+    "Asynchronous Test": {
         "prefix": "atest",
         "body": [
             "it('$1', async () => {",
@@ -131,25 +111,18 @@
             "    // Act",
             "",
             "    // Assert",
-            "})"
+            "});"
         ],
-        "description": "Create a new asynchronous Jest test"
+        "description": "Create a new asynchronous test case using Vitest"
     },
-    "Simple Jest Test": {
+    "Simple Test": {
         "prefix": "stest",
         "body": [
             "it('$1', () => {",
             "    $0",
-            "})"
+            "});"
         ],
-        "description": "Create a new simple Jest test"
-    },
-    "Console log": {
-        "prefix": "log",
-        "body": [
-            "console.log($1);"
-        ],
-        "description": "Console log statement"
+        "description": "Create a new simple test case using Vitest"
     },
     "Arrange, Act, Assert": {
         "prefix": "aaa",
@@ -162,5 +135,6 @@
             "// Assert"
         ],
         "description": "Create an Arrange, Act, Assert block of comments"
-    }
+    },
+
 }
