@@ -1,0 +1,68 @@
+/* Hide buttons in editor */
+.part.editor .title .actions-container .action-item a {
+    display: none !important;
+}
+
+/* Hide buttons in bottom panel */
+.panel.bottom .title .title-actions .actions-container .action-item a {
+    display: none !important;
+}
+
+.panel.bottom .title .title-actions .actions-container .action-item {
+    margin-right: 0px !important;
+}
+
+.panel.bottom .title .title-actions .actions-container .action-item select {
+    height: 34px !important;
+}
+
+.panel.bottom .title .title-actions .actions-container .action-item.select-container {
+    max-width: 400px !important;
+}
+
+.panel.bottom .title {
+    padding-right: 0px !important;
+}
+
+/* Hide scrollbar and show minimap on hover */
+
+.editor .minimap {
+    opacity: 0;
+}
+
+.editor .minimap:hover {
+    opacity: 1;
+}
+
+.editor .minimap .minimap-shadow-visible {
+    display: none;
+}
+
+.editor .scrollbar .slider {
+    display: none;
+}
+
+/* Hide title shadow */
+
+.monaco-editor .scroll-decoration {
+    box-shadow: none !important;
+}
+
+/* Hide title breadcrumbs */
+
+.monaco-breadcrumbs {
+    display: none !important;
+}
+
+/* Fix bottom panel spacing */
+
+.panel.bottom .content .terminal-tab .terminal {
+    top: 12px;
+}
+
+/* Change cursor color */
+
+.monaco-editor .cursor {
+    background: linear-gradient(to bottom, #7f00ff, #e100ff) !important;
+    color: #292D3E !important;
+}
