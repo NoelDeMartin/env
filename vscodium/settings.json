@@ -19,6 +19,8 @@
     "editor.codeActionsOnSave": { "source.fixAll": true },
     "eslint.onIgnoredFiles": "warn",
     "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.terminal.focusNext",
+        "workbench.action.terminal.focusPrevious",
         "workbench.action.toggleSidebarVisibility",
         "workbench.view.explorer"
     ],
