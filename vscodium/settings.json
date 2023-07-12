@@ -155,9 +155,4 @@
      **/
     "simple-project-switcher.directory": "[projects-path]",
 
-    /**
-     * Secrets
-     **/
-    "intelephense.licenceKey": "[intelephense-license-key]",
-
 }
