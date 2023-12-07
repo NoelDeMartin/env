@@ -30,3 +30,6 @@ __prompt_command() {
         PS1="💥 "
     fi
 }
+
+# Configure custom scripts
+export PATH=[projects-path]/env/bin:$PATH
