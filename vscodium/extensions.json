@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "antfu.browse-lite",
         "antfu.iconify",
         "be5invis.vscode-custom-css",
         "bmewburn.vscode-intelephense-client",

@@ -11,6 +11,7 @@
     "window.newWindowDimensions": "inherit",
     "files.trimTrailingWhitespace": true,
     "diffEditor.renderSideBySide": false,
+    "editor.stickyScroll.enabled": false,
     "editor.snippetSuggestions": "top",
     "editor.detectIndentation": false,
     "files.insertFinalNewline": true,
@@ -35,6 +36,7 @@
     "workbench.editor.showTabs": false,
     "editor.lineNumbers": "off",
     "scm.diffDecorations": "none",
+    "scm.showHistoryGraph": false,
     "editor.matchBrackets": "never",
     "workbench.tips.enabled": false,
     "editor.colorDecorators": false,
@@ -120,39 +122,48 @@
      **/
     "cSpell.userWords": [
         "Aerogel",
+        "autoload",
         "Bootup",
         "Chainable",
+        "chainer",
+        "dont",
+        "Falsish",
+        "globbing",
+        "Heisig",
+        "Histoire",
+        "imdb",
         "Inrupt",
         "JSONLD",
         "Laravel",
         "Mixins",
-        "SPARQL",
-        "Stringable",
-        "TMDB",
-        "Timeoutable",
-        "Uncapitalize",
-        "autoload",
-        "chainer",
-        "globbing",
-        "imdb",
         "noeldemartin",
         "oidc",
         "opengraph",
+        "Pinia",
+        "rdfs",
         "rdfs",
         "snackbars",
         "soukai",
+        "SPARQL",
+        "Stringable",
         "tailwindcss",
         "themoviedb",
+        "Timeoutable",
+        "TMDB",
         "tviso",
         "umai",
+        "Uncapitalize",
         "vite",
         "vitejs",
-        "vuex"
+        "vuex",
     ],
 
     /**
-     * Projects
+     * Extension settings
      **/
     "simple-project-switcher.directory": "[projects-path]",
+
+    // Binary installed from https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Linux_x64/1075656/
+    "browse-lite.chromeExecutable": "/etc/chrome-testing/chrome",
 
 }
