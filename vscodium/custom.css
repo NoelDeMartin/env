@@ -3,6 +3,11 @@
     display: none !important;
 }
 
+/* Show editor button for debugging Browser Lite */
+.part.editor .title .actions-container .action-item[title="Open debug page"] a {
+    display: revert !important;
+}
+
 /* Hide buttons in bottom panel */
 .panel.bottom .title .title-actions .actions-container .action-item a {
     display: none !important;
@@ -63,6 +68,6 @@
 /* Change cursor color */
 
 .monaco-editor .cursor {
-    background: linear-gradient(to bottom, #7f00ff, #e100ff) !important;
+    background: linear-gradient(to bottom, #2272b5, #8dcbff) !important;
     color: #292D3E !important;
 }
