@@ -57,6 +57,24 @@ alias nd="npm run dev"
 alias nt="npm run test"
 alias ns="npm run serve"
 alias nr="npm run"
+alias nclear="find ./ -type d -name '.cache' -exec rm -rf {} +"
+
+function nrefresh() {
+    # Clean up lock files and installed dependencies
+    rm package-lock.json
+    find ./ -type d -name "node_modules" -exec rm -rf {} +
+
+    # Reinstall dependencies
+    npm install
+}
+
+function nreset() {
+    # Clean up installed dependencies
+    find ./ -type d -name "node_modules" -exec rm -rf {} +
+
+    # Reinstall dependencies
+    npm ci
+}
 
 # Metal
 alias mu="metal up --only"
