@@ -1,10 +1,10 @@
 /* Hide buttons in editor */
-.part.editor .title .actions-container .action-item a {
+.part.editor .title .actions-container a.action-label {
     display: none !important;
 }
 
 /* Show editor button for debugging Browser Lite */
-.part.editor .title .actions-container .action-item[title="Open debug page"] a {
+.part.editor .title .actions-container a.action-label[aria-label="Open debug page"] {
     display: revert !important;
 }
 
