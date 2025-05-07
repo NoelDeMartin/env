@@ -9,6 +9,7 @@
         "CoachRichbart.better-jest",
         "dbaeumer.vscode-eslint",
         "jeff-hykin.polacode-2019",
+        "laravel.vscode-laravel",
         "lokalise.i18n-ally",
         "MehediDracula.php-namespace-resolver",
         "pajdziu.trailingwhitespacehighlighter",
@@ -17,5 +18,6 @@
         "streetsidesoftware.code-spell-checker",
         "vscode-icons-team.vscode-icons",
         "Vue.volar",
+        "stivo.tailwind-fold",
     ]
 }

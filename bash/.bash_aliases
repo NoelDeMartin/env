@@ -65,7 +65,7 @@ function nrefresh() {
     find ./ -type d -name "node_modules" -exec rm -rf {} +
 
     # Reinstall dependencies
-    npm install
+    npm install --verbose
 }
 
 function nreset() {
@@ -85,6 +85,12 @@ alias mr="metal restart"
 alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
 alias su="sail up -d"
 alias sd="sail down"
-alias art="sail artisan"
+alias art="php artisan"
 alias at="art test"
-alias composer="docker run --rm -u '$(id -u):$(id -g)' -v '$(pwd):/var/www/html' -w /var/www/html laravelsail/php82-composer:latest composer"
+alias as="art serve --host localhost"
+alias ad="composer dev"
+alias mfs="art migrate:fresh --seed"
+alias solo="art solo"
+
+# Python
+alias python="python3"

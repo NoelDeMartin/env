@@ -5,6 +5,7 @@
      **/
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.persistentSessionReviveProcess": "never",
+    "workbench.activityBar.orientation": "vertical",
     "editor.copyWithSyntaxHighlighting": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "workbench.editor.enablePreview": false,
@@ -19,6 +20,7 @@
     "search.searchOnType": false,
     "editor.codeActionsOnSave": { "source.fixAll": true },
     "eslint.onIgnoredFiles": "warn",
+    "editor.minimap.enabled": true,
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.terminal.focusNext",
         "workbench.action.terminal.focusPrevious",
@@ -87,6 +89,7 @@
         "**/_ide_helper.php": true,
         "**/composer.lock": true,
         "**/package-lock.json": true,
+        "**/pnpm-lock.yaml": true,
         "storage": true,
         ".phpunit.result.cache": true
     },
@@ -139,6 +142,7 @@
         "noeldemartin",
         "oidc",
         "opengraph",
+        "pepicons",
         "Pinia",
         "rdfs",
         "rdfs",
