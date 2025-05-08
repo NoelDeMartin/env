@@ -1,3 +1,2 @@
-# Configure this global ignore using the following command:
-# git config --global core.excludesFile [projects-path]/env/git/.gitignore
+# Global git ignore
 TODOs.md
