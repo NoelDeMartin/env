@@ -55,6 +55,8 @@
     "editor.renderControlCharacters": false,
     "editor.hideCursorInOverviewRuler": true,
     "vsicons.dontShowNewVersionMessage": true,
+    "vue.editor.reactivityVisualization": false,
+    "vue.editor.templateInterpolationDecorators": false,
     "editor.gotoLocation.multipleReferences": "gotoAndPeek",
     "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
     "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
