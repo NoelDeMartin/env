@@ -31,10 +31,10 @@ alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grs="git reset HEAD~1 --soft"
 alias gc="git checkout"
-alias gca="git commit --amend"
+alias gca="git commit --amend --no-verify"
 alias gpu="git push"
 alias gpuf="git push --force-with-lease"
-alias gwip="git add . && git commit -m 'wip'"
+alias gwip="git add . && git commit -m 'wip' --no-verify"
 
 function gri() {
     git rebase -i HEAD~$1
