@@ -25,7 +25,11 @@ __prompt_command() {
         # 141 - Ignore exiting `git log` command (aliased as "gl")
         [[ $exitcode == 141 && $command == "gl" ]]
     then
-        PS1="🤖 "
+        if grep -q "ID=arch" /etc/os-release; then
+            PS1="🤖 "
+        else
+            PS1="📦 "
+        fi
     else
         PS1="💥 "
     fi
