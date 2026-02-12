@@ -57,4 +57,7 @@ else
     echo "Source line added successfully"
 fi
 
+echo "Setting default browser..."
+xdg-settings set default-web-browser firefox.desktop
+
 echo "Overrides were installed!"
