@@ -1,0 +1,153 @@
+#!/bin/bash
+set -e
+
+usage() {
+    echo "Usage: $(basename "$0") <repo> [repo...]"
+    echo ""
+    echo "Set up a new multi-root workspace, or add projects to an existing one."
+    echo ""
+    echo "New workspace"
+    echo "  Run from an empty directory. Clones each repository and creates"
+    echo "  <dirname>.code-workspace in the current directory."
+    echo ""
+    echo "Adding a project to a workspace"
+    echo "  Run from a directory that already contains a .code-workspace file."
+    echo "  Clones any new repositories and appends them to the workspace file."
+    echo "  Repositories already listed in the workspace are ignored."
+    exit 1
+}
+
+resolve_workspace_file() {
+    local default="${PWD##*/}.code-workspace"
+    local files=()
+
+    if [ -f "$default" ]; then
+        workspace_file=$default
+        return 0
+    fi
+
+    shopt -s nullglob
+    files=( *.code-workspace )
+    shopt -u nullglob
+
+    if [ "${#files[@]}" -eq 1 ]; then
+        workspace_file=${files[0]}
+        return 0
+    fi
+
+    if [ "${#files[@]}" -gt 1 ]; then
+        echo "❌ Multiple .code-workspace files found: ${files[*]}"
+        echo "   Keep a single workspace file in this directory."
+        exit 1
+    fi
+
+    workspace_file=$default
+    return 1
+}
+
+repo_in_workspace() {
+    grep -Fq "\"path\": \"${1}\"" "$workspace_file"
+}
+
+path_in_list() {
+    local needle=$1 p
+    shift
+    for p in "$@"; do
+        [ "$p" = "$needle" ] && return 0
+    done
+    return 1
+}
+
+read_workspace_paths() {
+    workspace_paths=()
+    local path_line path
+    while IFS= read -r path_line; do
+        path=${path_line#\"path\": \"}
+        path=${path%\"}
+        workspace_paths+=("$path")
+    done < <(grep -oE '"path": "[^"]+"' "$workspace_file")
+}
+
+write_workspace_file() {
+    local paths=("$@")
+    local folders_json="" i settings_block
+
+    for i in "${!paths[@]}"; do
+        [ "$i" -gt 0 ] && folders_json+=","
+        folders_json+=$'\n    { "path": "'"${paths[$i]}"'" }'
+    done
+
+    if [ -f "$workspace_file" ] && grep -q '"settings":' "$workspace_file"; then
+        settings_block=$(sed -n '/"settings":/,/^  }/p' "$workspace_file")
+    else
+        settings_block='  "settings": {
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    }
+  }'
+    fi
+
+    cat <<EOF > "$workspace_file"
+{
+  "folders": [${folders_json}
+  ],
+${settings_block}
+}
+EOF
+}
+
+if [ "$#" -eq 0 ]; then
+    usage
+fi
+
+repos=("$@")
+
+adding_to_workspace=false
+if resolve_workspace_file; then
+    adding_to_workspace=true
+elif [ -n "$(ls -A 2>/dev/null)" ]; then
+    echo "❌ Current directory is not empty and has no workspace file."
+    echo ""
+    echo "Use an empty folder to create a new workspace, or run this from an"
+    echo "existing workspace root that already contains a .code-workspace file."
+    exit 1
+fi
+
+if [ "$adding_to_workspace" = true ]; then
+    echo "📂 Adding projects to workspace (${workspace_file})..."
+else
+    echo "📂 Setting up workspace in the current directory..."
+fi
+echo "   Repositories: ${repos[*]}"
+
+for repo in "${repos[@]}"; do
+    if [ "$adding_to_workspace" = true ] && repo_in_workspace "$repo"; then
+        echo "✅ ${repo} is already in the workspace, skipping."
+        continue
+    fi
+
+    if [ -d "$repo" ]; then
+        echo "✅ ${repo} already exists, skipping clone."
+    else
+        echo "⬇️  Cloning ${repo}..."
+        git clone "git@github.com:NoelDeMartin/${repo}.git"
+    fi
+done
+
+if [ "$adding_to_workspace" = true ]; then
+    echo "📝 Updating ${workspace_file}..."
+    read_workspace_paths
+    merged_paths=("${workspace_paths[@]}")
+    for repo in "${repos[@]}"; do
+        if ! path_in_list "$repo" "${merged_paths[@]}"; then
+            merged_paths+=("$repo")
+        fi
+    done
+    write_workspace_file "${merged_paths[@]}"
+else
+    echo "📝 Creating ${workspace_file}..."
+    write_workspace_file "${repos[@]}"
+fi
+
+echo "🎉 All done!"
