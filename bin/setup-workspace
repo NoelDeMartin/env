@@ -68,6 +68,15 @@ read_workspace_paths() {
     done < <(grep -oE '"path": "[^"]+"' "$workspace_file")
 }
 
+ensure_workspace_root() {
+    local paths=() p
+    for p in "$@"; do
+        [ "$p" = "./" ] && continue
+        paths+=("$p")
+    done
+    workspace_folders=("./" "${paths[@]}")
+}
+
 write_workspace_file() {
     local paths=("$@")
     local folders_json="" i settings_block
@@ -144,10 +153,12 @@ if [ "$adding_to_workspace" = true ]; then
             merged_paths+=("$repo")
         fi
     done
-    write_workspace_file "${merged_paths[@]}"
+    ensure_workspace_root "${merged_paths[@]}"
+    write_workspace_file "${workspace_folders[@]}"
 else
     echo "📝 Creating ${workspace_file}..."
-    write_workspace_file "${repos[@]}"
+    ensure_workspace_root "${repos[@]}"
+    write_workspace_file "${workspace_folders[@]}"
 fi
 
 echo "🎉 All done!"
