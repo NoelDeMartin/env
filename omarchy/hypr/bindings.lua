@@ -5,6 +5,8 @@ hl.unbind("SUPER + T")       -- was: toggle floating/tiling
 hl.unbind("SUPER + F")       -- was: full screen
 hl.unbind("SUPER + SHIFT + B") -- was: browser
 hl.unbind("SUPER + SHIFT + F") -- was: file manager
+hl.unbind("SUPER + RETURN") -- was: terminal
+hl.unbind("SUPER + Q") -- was: quit
 
 -- Navigation
 o.bind("CTRL + SHIFT + SPACE", "Launch apps", "omarchy-menu toggle apps")
@@ -21,10 +23,12 @@ o.bind("CTRL + ALT + DOWN", "Volume down", "omarchy-audio-output-volume lower")
 
 -- Apps
 o.bind("SUPER + T", "Terminal", { omarchy = "terminal" })
+o.bind("SUPER + RETURN", "Herdr", { launch = "xdg-terminal-exec --dir=" .. (os.getenv("HOME") or "") .. "/Work herdr" })
 o.bind("SUPER + B", "Browser", { omarchy = "browser" })
 o.bind("SUPER + SHIFT + B", "Browser (private)", { omarchy = "browser --private" })
 o.bind("SUPER + F", "File manager", { omarchy = "nautilus" })
 o.bind("SUPER + SHIFT + F", "File manager (cwd)", { omarchy = "nautilus-cwd" })
 o.bind("SUPER + Q", "Sublime Text", { launch = "subl" })
-o.bind("SUPER + A", "Code Editor", { launch = "cursor --classic" })
+o.bind("SUPER + Y", "Code Editor", { launch = "cursor --classic" })
+o.bind("SUPER + A", "Agent", { launch = "omarchy agent" })
 o.bind("SUPER + E", "Emoji picker", "omarchy-shell shell toggle omarchy.emojis")
