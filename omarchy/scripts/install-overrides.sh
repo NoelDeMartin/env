@@ -6,6 +6,7 @@ echo "Installing overrides..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_HYPR_DIR="$SCRIPT_DIR/../hypr"
 UWSM_CONFIG="$HOME/.config/uwsm/default"
+HERDR_CONFIG="$HOME/.config/herdr/config.toml"
 OVERRIDES_SCRIPT="$SCRIPT_DIR/../overrides.sh"
 HYPRLAND_CONFIG="$HOME/.config/hypr/hyprland.lua"
 SCRIPT_SOURCE_LINE=". $OVERRIDES_SCRIPT"
@@ -29,6 +30,16 @@ for config_file in "${HYPR_FILES[@]}"; do
     ln -sf "$source_file" "$target_file"
     echo "Linked $target_file -> $source_file"
 done
+
+if [ ! -f "$HERDR_CONFIG" ] && [ -f "/usr/share/omarchy/config/herdr/config.toml" ]; then
+    mkdir -p "$HOME/.config/herdr"
+    cp "/usr/share/omarchy/config/herdr/config.toml" "$HERDR_CONFIG"
+fi
+
+if [ -f "$HERDR_CONFIG" ]; then
+    sed -i 's/^new_cwd = .*/new_cwd = "~\/Work"/' "$HERDR_CONFIG"
+    echo "Configured Herdr new_cwd override in $HERDR_CONFIG"
+fi
 
 if grep -Fxq "$SCRIPT_SOURCE_LINE" "$UWSM_CONFIG"; then
     echo "USWM overrides already configured in $UWSM_CONFIG"
