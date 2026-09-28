@@ -3,6 +3,6 @@
 set -e
 echo "Disabling defaults..."
 
-omarchy plugin disable omacom.elsewhen
+omarchy plugin disable omarchy.elsewhen
 
 echo "Defaults disabled!"
