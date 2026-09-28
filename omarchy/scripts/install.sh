@@ -7,6 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Installing everything..."
 
 . $SCRIPT_DIR/install-overrides.sh
+. $SCRIPT_DIR/install-fonts.sh
 . $SCRIPT_DIR/disable-defaults.sh
 
 echo "Everything was installed!"
