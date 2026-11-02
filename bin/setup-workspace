@@ -83,13 +83,23 @@ write_workspace_file() {
 
     for i in "${!paths[@]}"; do
         [ "$i" -gt 0 ] && folders_json+=","
-        folders_json+=$'\n    { "path": "'"${paths[$i]}"'" }'
+        if [ "${paths[$i]}" = "./" ]; then
+            folders_json+=$'\n    { "path": "./", "name": "workspace" }'
+        else
+            folders_json+=$'\n    { "path": "'"${paths[$i]}"'" }'
+        fi
     done
 
     if [ -f "$workspace_file" ] && grep -q '"settings":' "$workspace_file"; then
         settings_block=$(sed -n '/"settings":/,/^  }/p' "$workspace_file")
     else
         settings_block='  "settings": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.oxc": "explicit"
+    },
     "search.exclude": {
       "**/node_modules": true,
       "**/dist": true
