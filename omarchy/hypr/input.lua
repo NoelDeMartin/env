@@ -8,7 +8,8 @@ hl.config({
     repeat_delay = 600,
     numlock_by_default = true,
     follow_mouse = 2,
-    sensitivity = 0.4,
+    sensitivity = 0,
+    accel_profile = "flat",
     touchpad = {
       scroll_factor = 0.4,
     },
