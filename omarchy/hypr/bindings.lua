@@ -32,3 +32,7 @@ o.bind("SUPER + Q", "Sublime Text", { launch = "subl" })
 o.bind("SUPER + Y", "Code Editor", { launch = "cursor --classic" })
 o.bind("SUPER + A", "Agent", { launch = "omarchy agent" })
 o.bind("SUPER + E", "Emoji picker", "omarchy-shell shell toggle omarchy.emojis")
+
+-- Screenshots
+o.rebind("PRINT", "Screenshot", "omasnap")
+o.rebind("SUPER + CTRL + ALT + C", "Screenshot", "omasnap")
