@@ -14,6 +14,7 @@
     "diffEditor.renderSideBySide": false,
     "editor.stickyScroll.enabled": false,
     "editor.snippetSuggestions": "top",
+    "telemetry.telemetryLevel": "off",
     "editor.detectIndentation": false,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -172,8 +173,5 @@
      * Extension settings
      **/
     "simple-project-switcher.directory": "[projects-path]",
-
-    // Binary installed from https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Linux_x64/1075656/
-    "browse-lite.chromeExecutable": "/etc/chrome-testing/chrome",
 
 }
