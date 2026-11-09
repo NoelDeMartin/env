@@ -65,7 +65,7 @@
     "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
     "window.menuBarVisibility": "toggle",
     "window.titleBarStyle": "native",
-    "vscode_custom_css.imports": ["file://[projects-path]/env/vscodium/custom.css"],
+    "vscode_custom_css.imports": ["file://[projects-path]/env/vscode/custom.css"],
 
     /**
      * Typography & Themes

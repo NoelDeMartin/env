@@ -8,6 +8,7 @@ echo "Installing everything..."
 
 . $SCRIPT_DIR/install-overrides.sh
 . $SCRIPT_DIR/install-fonts.sh
+. $SCRIPT_DIR/install-vscode.sh
 . $SCRIPT_DIR/disable-defaults.sh
 
 echo "Everything was installed!"

@@ -29,7 +29,7 @@ o.bind("SUPER + SHIFT + B", "Browser (private)", { omarchy = "browser --private"
 o.bind("SUPER + F", "File manager", { omarchy = "nautilus" })
 o.bind("SUPER + SHIFT + F", "File manager (cwd)", { omarchy = "nautilus-cwd" })
 o.bind("SUPER + Q", "Sublime Text", { launch = "subl" })
-o.bind("SUPER + Y", "Code Editor", { launch = "cursor --classic" })
+o.bind("SUPER + Y", "Code Editor", { launch = "code" })
 o.bind("SUPER + A", "Agent", { launch = "omarchy agent" })
 o.bind("SUPER + E", "Emoji picker", "omarchy-shell shell toggle omarchy.emojis")
 
