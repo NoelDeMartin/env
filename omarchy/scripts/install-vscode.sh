@@ -59,4 +59,12 @@ for extension in $extensions; do
     rm -rf "$vsix_dir"
 done
 
+# VSCode updates undo the Custom CSS patch, so it's applied again after every Omarchy update.
+HOOKS_DIR="$HOME/.config/omarchy/hooks/post-update.d"
+mkdir -p "$HOOKS_DIR"
+ln -sf "$SCRIPT_DIR/install-vscode-css.sh" "$HOOKS_DIR/vscode-custom-css"
+echo "Linked $HOOKS_DIR/vscode-custom-css"
+
+"$SCRIPT_DIR/install-vscode-css.sh"
+
 echo "VSCode config was installed!"
