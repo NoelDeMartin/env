@@ -3,7 +3,7 @@
 set -e
 echo "Installing packages..."
 
-omarchy pkg add vim shellcheck shfmt
+omarchy pkg add vim shellcheck shfmt nextcloud-client
 
 if command -v vp >/dev/null 2>&1; then
 	echo "Vite+ already installed"
