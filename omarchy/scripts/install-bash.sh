@@ -17,14 +17,14 @@ echo "Linked $BASH_ALIASES_TARGET -> $BASH_ALIASES_SOURCE"
 touch "$BASHRC_FILE"
 
 ensure_bashrc_line() {
-    local line="$1"
-    if grep -Fxq "$line" "$BASHRC_FILE"; then
-        echo "Already configured in $BASHRC_FILE: $line"
-    else
-        echo "" >> "$BASHRC_FILE"
-        echo "$line" >> "$BASHRC_FILE"
-        echo "Added to $BASHRC_FILE: $line"
-    fi
+	local line="$1"
+	if grep -Fxq "$line" "$BASHRC_FILE"; then
+		echo "Already configured in $BASHRC_FILE: $line"
+	else
+		echo "" >>"$BASHRC_FILE"
+		echo "$line" >>"$BASHRC_FILE"
+		echo "Added to $BASHRC_FILE: $line"
+	fi
 }
 
 ensure_bashrc_line "$BASHRC_SOURCE_LINE"

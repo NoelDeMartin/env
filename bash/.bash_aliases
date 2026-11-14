@@ -1,26 +1,28 @@
+#!/usr/bin/env bash
+
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ll="ls -la"
 
 function go() {
-    cd "/home/`whoami`/Work/$1"
+	cd "/home/$(whoami)/Work/$1" || return
 }
 
 function goAutocomplete() {
-    local file
+	local file
 
-    for file in /home/`whoami`/Work/"$2"*; do
-        [[ -d $file ]] || continue
+	for file in "/home/$(whoami)/Work/$2"*; do
+		[[ -d $file ]] || continue
 
-        COMPREPLY+=( $(basename "$file") )
-    done
+		COMPREPLY+=("$(basename "$file")")
+	done
 }
 
 complete -F goAutocomplete go
 
 # Permissions
-alias own="sudo chown `whoami`:`whoami` . -R"
+alias own='sudo chown "$(whoami):$(whoami)" . -R'
 
 # Git
 alias gs="git status"
@@ -37,16 +39,16 @@ alias gpuf="git push --force-with-lease"
 alias gwip="git add . && git commit -m 'wip' --no-verify"
 
 function gri() {
-    git rebase -i HEAD~$1
+	git rebase -i "HEAD~$1"
 }
 
 if [ -f "/usr/share/bash-completion/completions/git" ]; then
-    source /usr/share/bash-completion/completions/git
+	source /usr/share/bash-completion/completions/git
 
-    __git_complete gc _git_checkout
-    __git_complete gr _git_rebase
-    __git_complete gpu _git_push
-    __git_complete gpuf _git_push
+	__git_complete gc _git_checkout
+	__git_complete gr _git_rebase
+	__git_complete gpu _git_push
+	__git_complete gpuf _git_push
 fi
 
 # Npm
@@ -60,20 +62,20 @@ alias nr="npm run"
 alias nclear="find ./ -type d -name '.cache' -exec rm -rf {} +"
 
 function nrefresh() {
-    # Clean up lock files and installed dependencies
-    rm package-lock.json
-    find ./ -type d -name "node_modules" -exec rm -rf {} +
+	# Clean up lock files and installed dependencies
+	rm package-lock.json
+	find ./ -type d -name "node_modules" -exec rm -rf {} +
 
-    # Reinstall dependencies
-    npm install --verbose
+	# Reinstall dependencies
+	npm install --verbose
 }
 
 function nreset() {
-    # Clean up installed dependencies
-    find ./ -type d -name "node_modules" -exec rm -rf {} +
+	# Clean up installed dependencies
+	find ./ -type d -name "node_modules" -exec rm -rf {} +
 
-    # Reinstall dependencies
-    npm ci
+	# Reinstall dependencies
+	npm ci
 }
 
 # Metal
