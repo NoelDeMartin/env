@@ -12,7 +12,7 @@ SETTINGS_FILE="$VSCODE_USER_DIR/settings.json"
 if ! command -v code >/dev/null; then
 	# Stub setsid so omarchy-install-editor-vscode doesn't open VSCode when it finishes.
 	(
-		# shellcheck disable=SC2329
+		# shellcheck disable=SC2317,SC2329
 		setsid() { :; }
 		export -f setsid
 		omarchy-install-editor-vscode
