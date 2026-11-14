@@ -4,13 +4,13 @@ alias ...="cd ../.."
 alias ll="ls -la"
 
 function go() {
-    cd "/home/`whoami`/workspace/$1"
+    cd "/home/`whoami`/Work/$1"
 }
 
 function goAutocomplete() {
     local file
 
-    for file in /home/`whoami`/workspace/"$2"*; do
+    for file in /home/`whoami`/Work/"$2"*; do
         [[ -d $file ]] || continue
 
         COMPREPLY+=( $(basename "$file") )
