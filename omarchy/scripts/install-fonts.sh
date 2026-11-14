@@ -1,2 +1,8 @@
-sudo pacman -S ttf-ubuntu-font-family
-sudo pacman -S otf-montserrat
+#!/bin/bash
+
+set -e
+echo "Installing fonts..."
+
+omarchy pkg add ttf-ubuntu-font-family otf-montserrat
+
+echo "Fonts were installed!"

@@ -25,7 +25,7 @@ __prompt_command() {
         # 141 - Ignore exiting `git log` command (aliased as "gl")
         [[ $exitcode == 141 && $command == "gl" ]]
     then
-        if grep -q "ID=arch" /etc/os-release; then
+        if grep -qE "^(ID|ID_LIKE)=.*\barch\b" /etc/os-release; then
             PS1="🤖 "
         else
             PS1="📦 "
@@ -36,4 +36,7 @@ __prompt_command() {
 }
 
 # Configure custom scripts
-export PATH=[projects-path]/env/bin:$PATH
+ENV_BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../bin" && pwd)"
+if [ -d "$ENV_BIN_DIR" ] && [[ ":$PATH:" != *":$ENV_BIN_DIR:"* ]]; then
+    export PATH="$ENV_BIN_DIR:$PATH"
+fi

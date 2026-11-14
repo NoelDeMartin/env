@@ -15,11 +15,16 @@ o.bind("CTRL + ALT + RIGHT", "Next workspace", hl.dsp.focus({ workspace = "e+1" 
 o.bind("CTRL + ALT + LEFT", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Media
-o.bind("ALT + SPACE", "Play/Pause", "omarchy-shell media playPause")
+o.rebind("ALT + SPACE", "Play/Pause", "omarchy-shell media playPause")
 o.bind("ALT + RIGHT", "Next track", "omarchy-shell media next")
 o.bind("ALT + LEFT", "Previous track", "omarchy-shell media previous")
 o.bind("CTRL + ALT + UP", "Volume up", "omarchy-audio-output-volume raise")
 o.bind("CTRL + ALT + DOWN", "Volume down", "omarchy-audio-output-volume lower")
+
+-- Dictation
+if o.dictation_installed() then
+  o.bind("ALT + O", "Toggle dictation", "omarchy-dictation toggle")
+end
 
 -- Apps
 o.bind("SUPER + T", "Terminal", { omarchy = "terminal" })
