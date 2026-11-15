@@ -1,5 +1,16 @@
 -- Personal input overrides.
 
+local sensitivity = 0
+local local_input_file = (os.getenv("HOME") or "") .. "/.config/hypr/input.local.lua"
+local f = io.open(local_input_file, "r")
+if f then
+  f:close()
+  local local_cfg = dofile(local_input_file)
+  if type(local_cfg) == "table" and type(local_cfg.sensitivity) == "number" then
+    sensitivity = local_cfg.sensitivity
+  end
+end
+
 hl.config({
   input = {
     kb_layout = "es",
@@ -8,7 +19,7 @@ hl.config({
     repeat_delay = 600,
     numlock_by_default = true,
     follow_mouse = 2,
-    sensitivity = 0,
+    sensitivity = sensitivity,
     accel_profile = "flat",
     touchpad = {
       natural_scroll = true,

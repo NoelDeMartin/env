@@ -12,11 +12,16 @@ HERDR_CONFIG="$HOME/.config/herdr/config.toml"
 OVERRIDES_SCRIPT="$SCRIPT_DIR/../overrides.sh"
 HYPRLAND_CONFIG="$HOME/.config/hypr/hyprland.lua"
 MONITORS_CONFIG="$HOME/.config/hypr/monitors.lua"
+LOCAL_INPUT_CONFIG="$HOME/.config/hypr/input.local.lua"
 SCRIPT_SOURCE_LINE=". $OVERRIDES_SCRIPT"
 HYPR_FILES=(bindings.lua input.lua looknfeel.lua)
 
 is_number() {
 	[[ "$1" =~ ^[0-9]+(\.[0-9]+)?$ ]]
+}
+
+is_signed_number() {
+	[[ "$1" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]
 }
 
 if [ -f "$LOCAL_ENV_FILE" ]; then
@@ -56,6 +61,13 @@ if [ -n "${GDK_SCALE:-}" ] && ! is_number "$GDK_SCALE"; then
 	exit 1
 fi
 
+if [ -n "${MOUSE_SENSITIVITY:-}" ]; then
+	if ! is_signed_number "$MOUSE_SENSITIVITY" || ! awk "BEGIN { exit !($MOUSE_SENSITIVITY >= -1 && $MOUSE_SENSITIVITY <= 1) }"; then
+		echo "Invalid MOUSE_SENSITIVITY ($MOUSE_SENSITIVITY), expected a number between -1 and 1"
+		exit 1
+	fi
+fi
+
 if [ -f "$MONITORS_CONFIG" ]; then
 	if [ -n "${MONITOR_SCALE:-}" ]; then
 		if [ "$MONITOR_SCALE" = "auto" ]; then
@@ -71,6 +83,17 @@ if [ -f "$MONITORS_CONFIG" ]; then
 		sed -i "s/^local omarchy_gdk_scale = .*/local omarchy_gdk_scale = $GDK_SCALE/" "$MONITORS_CONFIG"
 		echo "Configured GDK_SCALE ($GDK_SCALE) in $MONITORS_CONFIG"
 	fi
+fi
+
+if [ -n "${MOUSE_SENSITIVITY:-}" ]; then
+	cat >"$LOCAL_INPUT_CONFIG" <<EOF
+return {
+  sensitivity = $MOUSE_SENSITIVITY,
+}
+EOF
+	echo "Configured mouse sensitivity ($MOUSE_SENSITIVITY) in $LOCAL_INPUT_CONFIG"
+else
+	rm -f "$LOCAL_INPUT_CONFIG"
 fi
 
 if [ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]; then
