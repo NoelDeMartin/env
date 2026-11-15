@@ -14,5 +14,6 @@ bash "$SCRIPT_DIR/install-git.sh"
 bash "$SCRIPT_DIR/install-ssh.sh"
 bash "$SCRIPT_DIR/install-vscode.sh"
 bash "$SCRIPT_DIR/disable-defaults.sh"
+bash "$SCRIPT_DIR/install-webapps.sh"
 
 echo "Everything was installed!"
