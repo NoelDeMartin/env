@@ -139,4 +139,17 @@ xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 xdg-mime default firefox.desktop text/html
 
+echo "Setting default image viewer..."
+xdg-mime default org.gnome.Loupe.desktop \
+	image/png \
+	image/jpeg \
+	image/gif \
+	image/webp \
+	image/bmp \
+	image/tiff \
+	image/avif \
+	image/heic \
+	image/jxl \
+	image/svg+xml
+
 echo "Overrides were installed!"
