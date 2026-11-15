@@ -11,5 +11,5 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq shfmt shellcheck
-          shfmt -d bash/.bashrc bash/.bash_aliases bin/setup-workspace
-          shellcheck bash/.bashrc bash/.bash_aliases bin/setup-workspace
+          shfmt -d bash/.bashrc bash/.bash_aliases cli/ndm
+          shellcheck bash/.bashrc bash/.bash_aliases cli/ndm

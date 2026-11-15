@@ -37,8 +37,8 @@ __prompt_command() {
 	fi
 }
 
-# Configure custom scripts
-ENV_BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../bin" && pwd)"
-if [ -d "$ENV_BIN_DIR" ] && [[ ":$PATH:" != *":$ENV_BIN_DIR:"* ]]; then
-	export PATH="$ENV_BIN_DIR:$PATH"
+# Configure custom CLI
+ENV_CLI_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../cli" && pwd)"
+if [ -d "$ENV_CLI_DIR" ] && [[ ":$PATH:" != *":$ENV_CLI_DIR:"* ]]; then
+	export PATH="$ENV_CLI_DIR:$PATH"
 fi
