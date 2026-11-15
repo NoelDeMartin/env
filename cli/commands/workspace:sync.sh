@@ -42,6 +42,11 @@ for path in "${workspace_paths[@]}"; do
 		continue
 	fi
 
+	if [[ -n "$(git -C "$path" status --porcelain)" ]]; then
+		warn "⚠️  ${path} has uncommitted changes, skipping."
+		continue
+	fi
+
 	info "📦 Syncing ${path}..."
 	(
 		cd "$path" || exit
