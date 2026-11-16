@@ -15,12 +15,16 @@ Set up a new multi-root workspace, or add projects to an existing one.
 
 New workspace
   Run from an empty directory. Clones each repository and creates
-  <dirname>.code-workspace in the current directory.
+  <dirname>.code-workspace and AGENTS.md in the current directory. The first
+  repository is the main project: TODOs.md and Plans are linked to its notes in
+  ~/Nextcloud/Notes/TODOs/<repo>.md and ~/Nextcloud/Notes/Plans/<repo>/ (if they
+  exist).
 
 Adding a project to a workspace
   Run from a directory that already contains a .code-workspace file.
   Clones any new repositories and appends them to the workspace file.
-  Repositories already listed in the workspace are ignored.
+  Repositories already listed in the workspace are ignored. AGENTS.md, TODOs.md
+  and Plans are created if they're missing.
 EOF
 	exit "${1:-1}"
 }
@@ -78,6 +82,15 @@ else
 	info "📝 Creating ${workspace_file}..."
 	ensure_workspace_root "${repos[@]}"
 	write_workspace_file "${workspace_folders[@]}"
+fi
+
+link_notes "${workspace_folders[1]}"
+
+if [[ -f AGENTS.md ]]; then
+	info "✅ AGENTS.md already exists, skipping."
+else
+	info "📝 Creating AGENTS.md..."
+	write_agents_file
 fi
 
 info "🎉 All done!"
